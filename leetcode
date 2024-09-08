@@ -1,0 +1,19 @@
+class Solution {
+#define x first
+#define y second
+public:
+    int longestConsecutive(vector<int>& nums) {
+        map<int, int> mvp;
+        for (int i = 0; i < nums.size(); i ++ ) mvp[nums[i]] = i;
+        int ans = 0, used = 1e9 + 10, res = 1;
+        for (auto it = mvp.begin(); it != mvp.end(); it ++ ) {
+            if (it->x == used + 1) 
+                res ++;
+            else
+                res = 1;
+            used = it->x;
+            ans = max(ans, res);
+        }
+        return ans;
+    }
+};
