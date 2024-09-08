@@ -17,3 +17,35 @@ public:
         return ans;
     }
 };
+
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        unordered_map<string,vector<string>> hash;
+        for(string& a:strs){
+            string key=a;
+            sort(key.begin(),key.end());
+            hash[key].emplace_back(a);
+        }
+        vector<vector<string>> result;
+        for(auto& a:hash){
+            result.emplace_back(a.second);
+        }
+        return result;
+    }
+};
+
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int n=nums.size();
+        int left=0,right=0;
+        while(right<n){
+            if (nums[right]) {
+                swap(nums[left], nums[right]);
+                left++;
+            }
+            right++;
+        }
+    }
+};
