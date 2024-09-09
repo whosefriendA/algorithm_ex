@@ -52,3 +52,21 @@
 //         }
 //     }
 // };
+// class Solution {
+// public:
+//     int maxArea(vector<int>& height) {
+//         int high=0,s=0,result=0,lindex=0;
+//         int rindex=height.size()-1;
+//         while(lindex!=rindex){
+//             high=min(height[lindex],height[rindex]);
+//             s=(rindex-lindex)*high;
+//             result=max(s,result);
+//             if(height[lindex]<height[rindex]){
+//                 lindex++;
+//             }else {
+//                 rindex--;
+//             }
+//         }
+//         return result;
+//     }
+// };
