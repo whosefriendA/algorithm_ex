@@ -75,25 +75,16 @@
 //     vector<vector<int>> threeSum(vector<int>& nums) {
 //         sort(nums.begin(), nums.end());
 //         vector<vector<int>> result;
-
 //         for (int i = 0; i < nums.size(); i++) {
-//             // 跳过重复的元素，避免重复解
 //             if (i > 0 && nums[i] == nums[i - 1]) continue;
-
 //             int lindex = i + 1;
 //             int rindex = nums.size() - 1;
-
 //             while (lindex < rindex) {
 //                 int sum = nums[i] + nums[lindex] + nums[rindex];
-                
 //                 if (sum == 0) {
-//                     // 找到满足条件的三元组
 //                     result.emplace_back(vector<int>{nums[i], nums[lindex], nums[rindex]});
-                    
-//                     // 跳过重复的元素
 //                     while (lindex < rindex && nums[lindex] == nums[lindex + 1]) lindex++;
 //                     while (lindex < rindex && nums[rindex] == nums[rindex - 1]) rindex--;
-
 //                     lindex++;
 //                     rindex--;
 //                 } else if (sum < 0) {
@@ -103,7 +94,6 @@
 //                 }
 //             }
 //         }
-
 //         return result;
 //     }
 // };
