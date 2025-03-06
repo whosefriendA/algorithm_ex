@@ -162,3 +162,21 @@
 //     }
 //     return result
 // }
+// func minSubArrayLen(target int, nums []int) int {
+//     sum:=0
+//     left:=0
+//     length :=len(nums)
+//     result :=length+1
+//     for right:=0;right<length;right++{
+//         sum +=nums[right]
+//         for sum>=target{
+//             result=min(result,right-left+1)
+//             sum -=nums[left]
+//             left++
+//         }
+//     }
+//     if result <= length {
+// 	    return result
+//     }
+//     return 0
+// }
