@@ -200,4 +200,25 @@
 // 
 // }
 /
-/
+
+func maxVowels(s string, k int) int {
+    res := 0
+    sum :=0
+    left :=0
+    len :=len(s)
+    for i:=0;i<len;i++{
+        if s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'{
+            sum++
+        }
+        if i< k-1{
+            continue
+        }
+        res =max(res,sum)
+        out := s[left]
+        if out=='a'||out=='e'||out=='i'||out=='o'||out=='u'{
+            sum--
+        }
+        left++
+    }
+    return res
+}
