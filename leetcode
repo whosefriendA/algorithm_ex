@@ -199,26 +199,40 @@
 //    return result 
 // 
 // }
-/
 
-func maxVowels(s string, k int) int {
-    res := 0
-    sum :=0
-    left :=0
-    len :=len(s)
-    for i:=0;i<len;i++{
-        if s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'{
-            sum++
-        }
-        if i< k-1{
-            continue
-        }
-        res =max(res,sum)
-        out := s[left]
-        if out=='a'||out=='e'||out=='i'||out=='o'||out=='u'{
-            sum--
-        }
-        left++
-    }
-    return res
-}
+// func maxVowels(s string, k int) int {
+//     res := 0
+//     sum :=0
+//     left :=0
+//     len :=len(s)
+//     for i:=0;i<len;i++{
+//         if s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'{
+//             sum++
+//         }
+//         if i< k-1{
+//             continue
+//         }
+//         res =max(res,sum)
+//         out := s[left]
+//         if out=='a'||out=='e'||out=='i'||out=='o'||out=='u'{
+//             sum--
+//         }
+//         left++
+//     }
+//     return res
+// }
+
+// func numOfSubarrays(arr []int, k, threshold int) (ans int) {
+//     s := 0 
+//     for i, x := range arr {
+//         s += x
+//         if i < k-1 { 
+//             continue
+//         }
+//         if s >= k*threshold {
+//             ans++
+//         }
+//         s -= arr[i-k+1]
+//     }
+//     return
+// }
