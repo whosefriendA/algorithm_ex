@@ -236,3 +236,19 @@
 //     }
 //     return
 // }
+
+// func maximumUniqueSubarray(nums []int) (maxSum int) {
+    // set := map[int]bool{}
+    // for start, end, sum := 0, 0, 0; end < len(nums); end++ {
+        // for set[nums[end]] { 
+            // sum -= nums[start]
+            // delete(set, nums[start])
+            // start++
+        // }
+        // sum += nums[end] 
+        // maxSum = max(maxSum, sum) 
+        // set[nums[end]] = true 
+    // }
+    // return
+// }
+// 
