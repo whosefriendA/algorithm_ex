@@ -266,3 +266,31 @@
 //     }
 //     return
 // }
+
+// func maxConsecutiveAnswers(answerKey string, k int) int {
+//     return max(helper(answerKey, k, 'T'), helper(answerKey, k, 'F'))
+// }
+
+// func helper(answerKey string, k int, ch rune) int {
+//     left, maxLen, count := 0, 0, 0
+//     for right, char := range answerKey {
+//         if char == ch {
+//             count++
+//         }
+//         for count > k {
+//             if rune(answerKey[left]) == ch {
+//                 count--
+//             }
+//             left++
+//         }
+//         maxLen = max(maxLen, right-left+1)
+//     }
+//     return maxLen
+// }
+
+// func max(a, b int) int {
+//     if a > b {
+//         return a
+//     }
+//     return b
+// }
