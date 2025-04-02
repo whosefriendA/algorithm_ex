@@ -327,3 +327,12 @@
         //}
         //return res
     //}
+    func minimumRecolors(blocks string, k int) int {
+        white :=strings.Count(blocks[:k], "W")
+        res :=white
+        for i :=k;i<len(blocks);i++{
+            white +=int(blocks[i]&1)-int(blocks[i-k]&1)
+            res =min(res,white)
+        }
+        return res
+    }
