@@ -359,3 +359,61 @@
        end :=search(nums,target+1)-1
        return []int{start,end}
    }
+
+   func findAnagrams(s string, p string) []int {
+       k :=len(p)
+       chars :=[26]int{}
+       charp :=[26]int{}
+       result :=[]int{}
+       for _,v:=range p {
+           charp[v-'a']++
+       }
+       for right,v:=range s{
+           chars[v-'a']++
+           left :=right-k+1
+           if left<0 {
+               continue
+           }
+           if chars==charp{
+               result =append(result,left)
+           }
+           chars[s[left]-'a']--
+       }
+       return result
+   }
+
+   func se (nums[]int,target int) int {
+       left := 0
+       right :=len(nums)-1
+       for left<=right{
+           mid :=left +(right-left)/2
+           if nums[mid]>=target {
+               right=mid-1
+           }else{
+               left=mid+1
+           }
+       }
+       return left
+   }
+
+   func search(nums []int, target int) int {
+       result :=se(nums,target)
+       if result ==len(nums)||nums[result] !=target{
+           return -1
+       }
+       return result
+   }
+
+   func searchInsert(nums []int, target int) int {
+       left := 0
+       right :=len(nums)-1
+       for left<=right{
+           mid :=left +(right-left)/2
+           if nums[mid]>=target {
+               right=mid-1
+           }else{
+               left=mid+1
+           }
+       }
+       return left
+   }
