@@ -644,3 +644,26 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     }
     return head
 }
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func preorderTraversal(root *TreeNode) []int {
+    var preorder func(root *TreeNode)
+    res :=[]int{}
+    preorder=func(node *TreeNode){
+        if node==nil{
+            return
+        }
+        res=append(res,node.Val)
+        preorder(node.Left)
+        preorder(node.Right)
+    }
+    preorder(root)
+    return res
+}
