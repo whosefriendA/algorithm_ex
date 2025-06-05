@@ -1,0 +1,35 @@
+198
+
+Memoized search
+func rob(nums []int) int {
+    length := len(nums)
+    cache:=make([]int,length)
+    for i,_:= range cache{
+        cache[i]=-1
+    }
+    var robret func(n int) int
+    robret = func(n int) int {
+        if n < 0 {
+            return 0
+        }
+        if cache[n]!=-1{
+            return cache[n]
+        }
+        res:=max(robret(n-1), robret(n-2)+nums[n])
+        cache[n]=res
+        return res
+    }
+
+    return robret(length - 1)
+}
+
+dp：
+func rob(nums []int) int {
+    length := len(nums)
+    dp:=make([]int,length+2)
+    for i,x:=range nums {
+        dp[i+2]=max(dp[i+1],dp[i]+x)
+    }
+    return dp[length+1]
+}
+
